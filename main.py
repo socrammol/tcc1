@@ -40,7 +40,9 @@ try:
     for tweet in ts.search_tweets_iterable(tso):
              print( '@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'] ) )
              #c = csv.writer(open("data.csv", "wb"))
-             #c.writerow('@%s tweeted: %s' % (tweet['user']['screen_name'], tweet['text']))
+             #c.writerow('@%s tweeted: %s' % (tweet['text']))
+             with open("data.csv","a") as _file:
+                 _file.write('\n@%s tweeted: %s' % ( tweet['user'] ['screen_name'] , tweet['text']  ) )
 
 except TwitterSearchException as e:
     print(e)
