@@ -9,15 +9,15 @@ try:
     )
 
     tso = TwitterSearchOrder()
-    tso.set_keywords(['#america-mg'])
+    tso.set_keywords(['#cruzeiro'])
     tso.set_language('pt')
     for tweet in ts.search_tweets_iterable(tso):
              print( '@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'] + tweet['created_at'] ) )
              #with open("data.csv","a") as _file:
              #with open("teste.csv","a") as _file:
              #with open("bd/Atletico/AtleticoMG.csv","a") as _file:
-             with open("bd/America/america.csv", "a") as _file:
-             #with open("bd/cruzeiro/cruzeiro.csv","a") as _file:
+             #with open("bd/America/america.csv", "a") as _file:
+             with open("bd/cruzeiro/cruzeiro.csv","a") as _file:
                  _file.write( '@%s tweeted: %s' % ( tweet['user']['screen_name'] + ";", tweet['text'] + ";" + tweet['created_at']+ "\n"  ) )
 
 except TwitterSearchException as e:
