@@ -18,7 +18,7 @@ try:
              #with open("bd/Atletico/AtleticoMG.csv","a") as _file:
              #with open("bd/America/america.csv", "a") as _file:
              with open("bd/cruzeiro/cruzeiro.csv","a") as _file:
-                 _file.write( '@%s tweeted: %s' % ( tweet['user']['screen_name'] + ";", tweet['text'] + ";" + tweet['created_at']+ "\n"  ) )
+                 _file.write( '@%s tweeted: %s' % ( tweet['user']['screen_name'] + ";***;", tweet['text'] + ";***;" + tweet['created_at']+ "\n"  ) )
 
 except TwitterSearchException as e:
     print(e)
