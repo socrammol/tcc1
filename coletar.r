@@ -7,7 +7,7 @@ Consumer_Secret <- 'LicwyVCoenr4ITeUuF1Y55NpXoaeIJXqA4fN23LKSBIOj4cDVC';
 Access_Token <- '117869496-Biraq1HNZhVpTrPtCA0MgvXUw3YxFzkEjeEyyKlK';
 Access_Token_Secret <- '2mM4lUXbhgRvG4lgkdzWYqcRxStYPZpmloTHoOlRoUKZ5';
 Microsoft_API_Key <- 'abfc24e29ec24823b8a23985b8656dae';
-twitter_search_string <- "#galo";
+twitter_search_string <- "#cruzeiro";
 library(twitteR);
 library(jsonlite);
 library(httr);
@@ -21,7 +21,7 @@ tweets = searchTwitter(twitter_search_string, lang="pt", resultType="mixed", 100
 # ------------------------- Start transformations and cleasing -------------------------#
 tweets_df = do.call("rbind", lapply(tweets, as.data.frame));
 tweets_df = subset(tweets_df, select = c(text,created));
-tweet_test = tweets_df;
+
 
 
 #Tweet Cleasing
@@ -43,7 +43,6 @@ tweets_df$text = gsub("^\\s+|\\s+$", "", tweets_df$text)
 tweets_df["DuplicateFlag"] = duplicated(tweets_df$text);
 tweets_df = subset(tweets_df, tweets_df$DuplicateFlag=="FALSE");
 tweets_df = subset(tweets_df, select = -c(DuplicateFlag));
-dados = tweets_df;
 tweets_df = subset(tweets_df, text != "")
 
 # ------------------------- Finish transformations and cleasing -------------------------#
@@ -92,7 +91,7 @@ score_twitter$data <- c(tweets_df$created);
 #score_twitter$keyParser <- c()
 detach(Output_Sentimental);
 #rm(tweets_df);
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/teste.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/cruzeiro-19-03-19.csv", sep=";");
 # Pegar a palavra chave ainda n?o est? dispon?vel em portugues
 #result_twitter_keyPhrases = POST("https://brazilsouth.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases", 
 #                                 body = request_body_json_twitter, 
