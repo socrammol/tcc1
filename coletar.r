@@ -6,8 +6,8 @@ Consumer_API_Key <- 'zcQ8yEGrCpUL7AiJC7XSjP0ib';
 Consumer_Secret <- 'LicwyVCoenr4ITeUuF1Y55NpXoaeIJXqA4fN23LKSBIOj4cDVC';
 Access_Token <- '117869496-Biraq1HNZhVpTrPtCA0MgvXUw3YxFzkEjeEyyKlK';
 Access_Token_Secret <- '2mM4lUXbhgRvG4lgkdzWYqcRxStYPZpmloTHoOlRoUKZ5';
-Microsoft_API_Key <- 'abfc24e29ec24823b8a23985b8656dae';
-twitter_search_string <- "#cruzeiro";
+Microsoft_API_Key <- 'd33b8715b7c94db093decdd05e336484';
+twitter_search_string <- "#inter";
 library(twitteR);
 library(jsonlite);
 library(httr);
@@ -90,8 +90,8 @@ score_twitter$data <- c(tweets_df$created);
 ##se for necessario correção manual . sera necessario importr alguns dados a mao 
 #score_twitter$keyParser <- c()
 detach(Output_Sentimental);
-#rm(tweets_df);
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/cruzeiro-19-03-19.csv", sep=";");
+rm(tweets_df);
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/inter-21-03-19.csv", sep=";");
 # Pegar a palavra chave ainda n?o est? dispon?vel em portugues
 #result_twitter_keyPhrases = POST("https://brazilsouth.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases", 
 #                                 body = request_body_json_twitter, 
