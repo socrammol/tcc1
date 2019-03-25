@@ -1,13 +1,23 @@
 ##trabalho de TCC Mariane Mariano & Marcos Mol
 ## coleta de dados do twitter e analise de sentimentos, com verificação da chave utilizada
 rm(list=ls(all=TRUE));
+twitter_search_string <- "#galo";
+twitter_search_string <- "#cruzeiro";
+twitter_search_string <- "#america";
+twitter_search_string <- "#Corinthians";
+twitter_search_string <- "#flamengo";
+twitter_search_string <- "#vasco";
+twitter_search_string <- "#gremio";
+twitter_search_string <- "#cap";
+twitter_search_string <- "#america";
+twitter_search_string <- "#spfc";
+twitter_search_string <- "#inter";
 detach(Output_Sentimental);
 Consumer_API_Key <- 'zcQ8yEGrCpUL7AiJC7XSjP0ib';
 Consumer_Secret <- 'LicwyVCoenr4ITeUuF1Y55NpXoaeIJXqA4fN23LKSBIOj4cDVC';
 Access_Token <- '117869496-Biraq1HNZhVpTrPtCA0MgvXUw3YxFzkEjeEyyKlK';
 Access_Token_Secret <- '2mM4lUXbhgRvG4lgkdzWYqcRxStYPZpmloTHoOlRoUKZ5';
-Microsoft_API_Key <- 'd33b8715b7c94db093decdd05e336484';
-twitter_search_string <- "#inter";
+Microsoft_API_Key <- 'e32830dd8b404985a727413bab0fb6b1';
 library(twitteR);
 library(jsonlite);
 library(httr);
@@ -91,7 +101,6 @@ score_twitter$data <- c(tweets_df$created);
 #score_twitter$keyParser <- c()
 detach(Output_Sentimental);
 rm(tweets_df);
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/inter-21-03-19.csv", sep=";");
 # Pegar a palavra chave ainda n?o est? dispon?vel em portugues
 #result_twitter_keyPhrases = POST("https://brazilsouth.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases", 
 #                                 body = request_body_json_twitter, 
@@ -103,3 +112,16 @@ write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/inter-21
 #attach(Output_keyPhrases);
 #rows <- length(documents);
 #phrases_twitter = data.frame(matrix(unlist(Output_keyPhrases), nrow=rows, byrow=T));
+#SALVANDO EM ARQUIVO
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATLETICO,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CRUZEIRO,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/AMERICA,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CORINTHIANS,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/FLAMENGO,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/VASCO,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/GREMIO,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATHETICO PARANAENSE,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/SAO PAULO, .csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/INTER,.csv", sep=";");
+
+
