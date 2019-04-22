@@ -3,13 +3,12 @@
 rm(list=ls(all=TRUE));
 twitter_search_string <- "#galo";
 twitter_search_string <- "#cruzeiro";
-twitter_search_string <- "#america";
+twitter_search_string <- "#america-MG";
 twitter_search_string <- "#Corinthians";
 twitter_search_string <- "#flamengo";
 twitter_search_string <- "#vasco";
 twitter_search_string <- "#gremio";
 twitter_search_string <- "#cap";
-twitter_search_string <- "#america";
 twitter_search_string <- "#spfc";
 twitter_search_string <- "#inter";
 detach(Output_Sentimental);
@@ -17,7 +16,7 @@ Consumer_API_Key <- 'zcQ8yEGrCpUL7AiJC7XSjP0ib';
 Consumer_Secret <- 'LicwyVCoenr4ITeUuF1Y55NpXoaeIJXqA4fN23LKSBIOj4cDVC';
 Access_Token <- '117869496-Biraq1HNZhVpTrPtCA0MgvXUw3YxFzkEjeEyyKlK';
 Access_Token_Secret <- '2mM4lUXbhgRvG4lgkdzWYqcRxStYPZpmloTHoOlRoUKZ5';
-Microsoft_API_Key <- 'e32830dd8b404985a727413bab0fb6b1';
+Microsoft_API_Key <- '86ae7ff53b944eca8d007cad0c475a25';
 library(twitteR);
 library(jsonlite);
 library(httr);
@@ -102,9 +101,9 @@ score_twitter$data <- c(tweets_df$created);
 detach(Output_Sentimental);
 rm(tweets_df);
 # Pegar a palavra chave ainda n?o est? dispon?vel em portugues
-#result_twitter_keyPhrases = POST("https://brazilsouth.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases", 
-#                                 body = request_body_json_twitter, 
-#                                 add_headers(.headers = c("Content-Type"="application/json","Ocp-Apim-Subscription-Key"= Microsoft_API_Key)))
+result_twitter_keyPhrases = POST("https://brazilsouth.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases", 
+                                 body = request_body_json_twitter, 
+                                 add_headers(.headers = c("Content-Type"="application/json","Ocp-Apim-Subscription-Key"= Microsoft_API_Key)))
 
 ## WORKING ON IT
 # Transforming resulting in Data Frame (Key Phrases) - NOT WORKING TO PORTUGUESE
@@ -113,15 +112,15 @@ rm(tweets_df);
 #rows <- length(documents);
 #phrases_twitter = data.frame(matrix(unlist(Output_keyPhrases), nrow=rows, byrow=T));
 #SALVANDO EM ARQUIVO
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATLETICO,.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CRUZEIRO,.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/AMERICA,.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CORINTHIANS,.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/FLAMENGO,.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/VASCO,.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/GREMIO,.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATHETICO PARANAENSE,.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/SAO PAULO, .csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/INTER,.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATLETICO,36.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CRUZEIRO,37.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/AMERICA,38.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CORINTHIANS,39.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/FLAMENGO,40.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/VASCO,41.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/GREMIO,42.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATHETICO PARANAENSE,43.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/SAO PAULO, 44.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/INTER,45.csv", sep=";");
 
 
