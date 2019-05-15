@@ -99,12 +99,11 @@ score_twitter$data <- c(tweets_df$created);
 ##se for necessario correção manual . sera necessario importr alguns dados a mao 
 #score_twitter$keyParser <- c()
 detach(Output_Sentimental);
-rm(tweets_df);
+#rm(tweets_df);
 # Pegar a palavra chave ainda n?o est? dispon?vel em portugues
-result_twitter_keyPhrases = POST("https://brazilsouth.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases", 
-                                 body = request_body_json_twitter, 
-                                 add_headers(.headers = c("Content-Type"="application/json","Ocp-Apim-Subscription-Key"= Microsoft_API_Key)))
-
+#result_twitter_keyPhrases = POST("https://brazilsouth.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases", 
+#                                 body = request_body_json_twitter, 
+#                                 add_headers(.headers = c("Content-Type"="application/json","Ocp-Apim-Subscription-Key"= Microsoft_API_Key)))
 ## WORKING ON IT
 # Transforming resulting in Data Frame (Key Phrases) - NOT WORKING TO PORTUGUESE
 #Output_keyPhrases = content(result_twitter_keyPhrases);
@@ -112,15 +111,15 @@ result_twitter_keyPhrases = POST("https://brazilsouth.api.cognitive.microsoft.co
 #rows <- length(documents);
 #phrases_twitter = data.frame(matrix(unlist(Output_keyPhrases), nrow=rows, byrow=T));
 #SALVANDO EM ARQUIVO
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATLETICO,36.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CRUZEIRO,37.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/AMERICA,38.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CORINTHIANS,39.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/FLAMENGO,40.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/VASCO,41.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/GREMIO,42.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATHETICO PARANAENSE,43.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/SAO PAULO, 44.csv", sep=";");
-write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/INTER,45.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATLETICO,46.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CRUZEIRO,47.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/AMERICA,48.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/CORINTHIANS,49.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/FLAMENGO,50.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/VASCO,51.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/GREMIO,52.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/ATHETICO PARANAENSE,53.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/SAO PAULO, 54.csv", sep=";");
+write.table(score_twitter, "C:/Users/marco/Desktop/projetos/tcc/tcc1/bd/INTER,55.csv", sep=";");
 
 
